@@ -8,4 +8,6 @@ module.exports = router
     .put('/speiws/rest/ordenPago/registra'          , transaccionesController.registraOrden)
 
     .get('/cambio-estado'          , transaccionesController.cambioEstado)
+
+    .get('/abono-cobranza'          , transaccionesController.nuevoAbono)
     

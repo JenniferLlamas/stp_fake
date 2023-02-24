@@ -27,9 +27,9 @@ class TransaccionesController {
 
         console.log(body)
         if (body.success)
-            response.status(200).json({ id: '123456789123', descripcion: 'Exito' })
+            response.status(200).json({ resultado: { id: (Math.floor(Math.random() * 900000000000) + 100000000000), descripcion: 'Exito' }})
         else
-            response.status(400).json({ id: (Math.floor(Math.random() * 7)), descripcion: res_registro_orden[Math.floor(Math.random() * 7)] })
+            response.status(400).json({ resultado: { id: (Math.floor(Math.random() * 7)), descripcion: res_registro_orden[Math.floor(Math.random() * 7)] }})
 
     }
 
@@ -53,9 +53,11 @@ class TransaccionesController {
        })
        .then(res => {
             console.log("res", res.data);
+            return response.status(200).json({data: res.data})
 
        }).catch(error => {
             console.log("error", error);
+            return response.status(400).json({data: error.response})
 
        })
 
@@ -97,11 +99,11 @@ class TransaccionesController {
              "folioCodi": "f4c1111abd2b28a00abc"
        })
        .then(res => {
-            console.log("res", res.data);
+            return response.status(200).json({data: res.data})
 
        }).catch(error => {
             console.log("error", error);
-
+            return response.status(400).json({data: error.response})
        })
 
     }
