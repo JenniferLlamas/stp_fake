@@ -16,7 +16,7 @@ class ClientesController {
     registraCuenta = async ({ body }, response) => {
 
         console.log(body)
-        if (body.success)
+        if (true)
             response.status(200).json({ id: 0, descripcion: res_alta_persona_fisica[0] })
         else
             response.status(400).json({ id: (Math.floor(Math.random() * 7)), descripcion: res_alta_persona_fisica[Math.floor(Math.random() * 7)] })
@@ -70,7 +70,7 @@ class ClientesController {
     deleteCliente = async ({ query }, response) => {
         console.log(query)
 
-        if (query.success)
+        if (true)
             response.status(200).json({ id: 0, descripcion: res_alta_persona_fisica[0] })
 
         else
