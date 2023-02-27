@@ -11,6 +11,7 @@ dotenv.config();
 
 //IMPORTACION RUTAS
 const ClientesRouter = require('./routes/ClientesRouter')
+const TransaccionesRouter = require('./routes/TransaccionesRouter')
 
 const app = express();
 
@@ -34,7 +35,8 @@ app.get('/',({ originalUrl },response)=>{
 
 //AGREGAR RUTAS AL SERVIDOR
 app.use(
-    ClientesRouter
+    ClientesRouter,
+    TransaccionesRouter
 );
 
 module.exports = app;
